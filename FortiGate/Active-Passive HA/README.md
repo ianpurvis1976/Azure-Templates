@@ -1,3 +1,11 @@
+##Ian's notes:
+
+https://www.nblabs.net/2017/12/20/accepting-azure-marketplace-terms-powershell/:
+
+Get-AzureRmMarketplaceTerms -Publisher "fortinet" -Product "fortinet_fortigate-vm_v5" -Name "fortinet_fg-vm"  | Set-AzureRmMarketplaceTerms -Accept
+
+Need a subscription that supports 8 cores. VM size must have 4 nics
+
 ## This template set is designed for A/P HA in Azure.  The following are created:
 	- vnet with five subnets
                 or uses an existing vnet of your selection.  If using an existing vnet, it must already have 5 subnets.

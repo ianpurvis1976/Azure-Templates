@@ -1,3 +1,19 @@
+My Notes,
+
+Connect-AzureRmAccount
+Get-AzureRMMarketPlaceTerms -Publisher "fortinet" -Product "fortinet_fortigate-vm_v5" -Name "fortinet_fg-vm" | Set-AzureRmMarketplaceTerms -Accept
+
+rg=m_and_b_prep
+job=fortinetjob1
+az group deployment create  --template-file mainTemplate.json --resource-group $rg --name $job --parameters location=ukwest adminUsername=ian FortiGateNamePrefix=mandb vnetName=manbvnet
+
+
+Please provide string value for 'location' (? for help): uk west
+Please provide string value for 'adminUsername' (? for help): ian
+Please provide securestring value for 'adminPassword' (? for help):
+Please provide string value for 'FortiGateNamePrefix' (? for help): mandb
+Please provide string value for 'vnetName' (? for help): mandbvnet
+
 ## Active/Active loadbalanced pair of standalone FortiGates for resilience and scale
 The following resources are defined:
 - vnet with three subnets
